@@ -1,1 +1,295 @@
+// === fonts === //
+
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Playfair+Display:wght@400;700;800&display=swap');
+
+// === / fonts  === //
+
+
+
+
+//  === mixins === //
+@mixin font-main {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.025em;
+}
+
+@mixin font-second {
+    font-family: 'Playfair Display', serif;
+}
+
+// === / mixins === //
+
+
+//  === variables === //
+
+$color-main-bg: #eaeaea;
+$color-section-bg: #ffffff;
+//  === / variables === //
+
+
+// === common  === // 
+* {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+aside,
+nav,
+footer,
+header,
+section {
+    display: block;
+}
+
+
+
+ul li {
+    list-style: none;
+}
+
+a,
+a:hover,
+a:visited {
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+body {
+    @include font-main();
+
+    background-color: $color-main-bg;
+
+}
+
+// === / common  === // 
+
+
+// ===  header === //
+
+.outside-img {
+    img {
+        background-color: $color-main-bg;
+    }
+}
+
+
+.header {
+    margin-bottom: 15vh;
+    height: 16vh;
+    box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.15);
+
+    background-color: $color-section-bg;
+
+
+    .logo {
+        margin-top: 4vh;
+    }
+
+    .nav {
+
+        &-list {
+
+            &__item {}
+
+            &__link {
+                color: #000;
+                line-height: 1.2;
+                margin-right: 2vw;
+                margin-top: 6vh;
+                text-transform: uppercase;
+            }
+        }
+
+    }
+
+    .search {
+        margin-top: 5vh;
+
+        form {
+            background-color: $color-section-bg;
+            padding-left: 2vw;
+            border: 1px solid #c2c2c2;
+            margin-right: 3vw;
+            margin-left: 3vw;
+
+
+        }
+
+        input {
+            outline: none;
+            width: 10vw;
+            padding-right: 10px;
+
+
+
+            background-color: $color-section-bg;
+
+            &:focus,
+            &:active {
+                opacity: 0.3;
+            }
+
+            &::placeholder {
+                text-transform: uppercase;
+                font-size: 12px;
+                text-align: center;
+
+            }
+        }
+
+        .fa {
+            color: #c1c1c1;
+            font-size: 12px;
+        }
+    }
+
+
+}
+
+
+// === / header === //
+
+
+// === hero === //
+
+
+.hero {
+    margin-bottom: 15vh;
+    padding-top: 6vh;
+    padding-bottom: 6vh;
+    box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.15);
+
+    background: url("../img/hero.png") no-repeat;
+    background-size: cover;
+
+
+    &-info {
+        flex-direction: column;
+
+
+        &__logo {
+            margin-bottom: 5vh;
+        }
+
+        &__title {
+            @include font-second();
+
+
+            margin-bottom: 2vh;
+
+            font-size: 24px;
+            font-weight: 600;
+            color: #921026;
+
+        }
+
+        &__text {
+            margin-bottom: 3vh;
+            width: 30vw;
+
+            font-weight: 400;
+        }
+
+        &__link {
+            width: 10vw;
+            text-align: center;
+            border: 1px solid #c2c2c2;
+
+            &-btn {
+                display: inline-block;
+                padding: 0.5vh 1vw;
+
+                font-size: 12px;
+                color: #000;
+            }
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+// === / hero === //
+
+
+// === meals  === //
+
+
+.meals {
+    padding-top: 6vh;
+    padding-bottom: 6vh;
+    box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.15);
+
+    background-color: white;
+
+    &-list {
+        &__item {
+
+            width: 28vw;
+            &-photo {}
+
+            &-name {
+                margin-top: 1vh;
+                margin-bottom: 1vh;
+                font-weight: 400;
+            }
+
+            &-statistics {
+                display: flex;
+
+                font-family: 'OpenSans', sans-serif;
+                font-size: 12px;
+                line-height: 1.2;
+                font-weight: 300;
+                letter-spacing: 0.025em;
+                color: #555555;
+
+                .posted {
+                    display: flex;
+                    padding-right: 0.5vw;
+                    margin-right: 0.5vw;
+                    border-right: 1px solid #c4c4c4;
+                    height: 2vh;
+                }
+                .comments {
+                    display: flex;
+                    padding-right: 0.5vw;
+
+                }
+
+                .previews {
+                    display: flex;
+                    padding-right: 0.5vw;
+                }
+
+                .fa {
+                    padding-right: 0.3vw;
+                }
+            }
+        }
+    }
+
+    .fa-comment {
+        color: white;
+        text-shadow: 0 0 3px #000;
+    }
+}
+
+// === / meals  === //
