@@ -25,10 +25,10 @@
     <!------------    header -------------->
     <header class="header">
         <div class="container">
-            <div class="row">
+            <div class="row header-wrap">
                 <div class="col-2">
                     <div class="logo">
-                        <img src="img/logo_mini.jpg" alt="Logo_mini">
+                        <img src="img/logo_dark.png" alt="Logo_mini">
                     </div>
                 </div>
                 <div class="col-7">
@@ -72,7 +72,6 @@
                 </div>
             </div>
         </div>
-        </div>
     </header>
 
     <!------------   / header -------------->
@@ -81,8 +80,8 @@
 
     <section class="hero">
         <div class="container">
-            <div class="row">
-                <div class="col">
+            <div class="row hero-wrap">
+                <div class="col-10">
                     <div class="hero-info d-flex">
                         <div class="hero-info__logo">
                             <img src="img/logo_big.jpg" alt="">
@@ -112,19 +111,18 @@
 
     <!------------   meals -------------->
 
-    <div class="meals">
+    <section class="meals">
         <div class="container">
             <div class="row">
-                <div class="meals-list d-flex">
-                    <div class="col-4">
-                        <div class="meals-list__item">
-                            <div class="meals-list__item-photo">
+                    <div class="col-12 meals-wrap">
+                        <div class="meals__item">
+                            <div class="meals__item-photo">
                                 <img src="img/meals_1.png" alt="">
                             </div>
-                            <div class="meals-list__item-name">
+                            <div class="meals__item-name">
                                 Raspberry & Cream Frozen Yogurt Pie
                             </div>
-                            <div class="meals-list__item-statistics">
+                            <div class="meals__item-statistics">
                                 <div class="posted">
                                     <i class="fa fa-clock-o"></i>
                                     <p>35mins</p>
@@ -139,16 +137,14 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="meals-list__item">
-                            <div class="meals-list__item-photo">
+                        <div class="meals__item">
+                            <div class="meals__item-photo">
                                 <img src="img/meals_2.png" alt="">
                             </div>
-                            <div class="meals-list__item-name">
+                            <div class="meals__item-name">
                                 Giant Ice Cream Sandwich
                             </div>
-                            <div class="meals-list__item-statistics">
+                            <div class="meals__item-statistics">
                                 <div class="posted">
                                     <i class="fa fa-clock-o"></i>
                                     <p>20mins</p>
@@ -163,17 +159,15 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="meals-list__item">
-                            <div class="meals-list__item-photo">
+                        <div class="meals__item">
+                            <div class="meals__item-photo">
                                 <img src="img/meals_3.png" alt="">
                             </div>
-                            <div class="meals-list__item-name">
+                            <div class="meals__item-name">
                                 Dark Chocolate Crunch Ice Cream
                                 Sandwich Cake
                             </div>
-                            <div class="meals-list__item-statistics">
+                            <div class="meals__item-statistics">
                                 <div class="posted">
                                     <i class="fa fa-clock-o"></i>
                                     <p>15mins</p>
@@ -188,20 +182,88 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
 
 
-    <!------------  / meals -------------->
+        <!------------  / meals -------------->
 
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery.easie-min.js"></script>
-    <script src="js/main.js"></script>
+
+        <!------------  footer -------------->
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2 col-3">
+                        <div class="logo">
+                            <img src="img/logo_white.png" alt="Logo_mini">
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-9">
+                        <div class="nav">
+                            <ul class="nav-list d-flex">
+                                <li class="nav-list__item">
+                                    <a class="nav-list__link" href="#">
+                                        HOME
+                                    </a>
+                                </li>
+                                <li class="nav-list__item">
+                                    <a class="nav-list__link" href="#">
+                                        Recipes
+                                    </a>
+                                </li>
+                                <li class="nav-list__item">
+                                    <a class="nav-list__link" href="#">
+                                        Photo Galleries
+                                    </a>
+                                </li>
+                                <li class="nav-list__item">
+                                    <a class="nav-list__link" href="#">
+                                        Videos
+                                    </a>
+                                </li>
+                                <li class="nav-list__item">
+                                    <a class="nav-list__link" href="#">
+                                        All Categories
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="social d-flex">
+                            <i class="fa fa-google-plus"></i>
+                            <i class="fa fa-twitter"></i>
+                            <i class="fa fa-facebook"></i>
+                            <i class="fa fa-pinterest"></i>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="rights">
+                            <i class="fa fa-copyright">2016-2017 LEMON. All right reserved</i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+
+
+        <!------------  / footer -------------->
+
+
+
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/jquery.easie-min.js"></script>
+        <script src="js/main.js"></script>
 </body>
 
 </html>
