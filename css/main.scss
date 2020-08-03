@@ -19,6 +19,169 @@
     font-family: 'Playfair Display', serif;
 }
 
+
+@mixin btn-main {
+    display: inline-block;
+    width: 8vw;
+    text-align: center;
+    text-transform: uppercase;
+    border: 1px solid #c2c2c2;
+    padding: 0.2vh 0.5vw;
+
+    font-size: 12px;
+    color: #000;
+}
+
+@mixin note {
+
+    // === note === //
+
+    .note {
+
+        &-wrap {
+            justify-content: space-between;
+        }
+
+        &-top {
+            @include font-main();
+
+            padding-top: 3vh;
+            padding-left: 3vw;
+
+            border-bottom: 2px solid rgba(85, 85, 85, 0.2);
+            margin-right: 2vw;
+            margin-left: 2vw;
+
+            font-size: 20px;
+            font-style: italic;
+            font-weight: 400;
+            color: #000;
+        }
+
+        .error {
+
+            max-width: 40vw;
+            height: 85vh;
+            background-image: url("../img/empty_dish.jpg");
+            background-position: center;
+            background-size: 120%;
+
+
+            &-desc {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+                margin-top: 24vh;
+
+                &__title {
+
+                    font-size: 34px;
+                    font-weight: 900;
+
+                }
+
+                &__text {
+                    @include font-second();
+                    width: 12vw;
+                    text-align: center;
+
+                    font-weight: 900;
+                    text-transform: uppercase;
+                    color: #a9a9a9;
+                }
+
+                &__img {
+                    margin-bottom: 20vh;
+                }
+
+                &__link {
+                    a {
+                        @include btn-main();
+                    }
+                }
+            }
+
+        }
+
+        .author {
+            margin-left: 2vw;
+            width: 40vw;
+            height: 85vh;
+            background-color: #fff;
+
+            &-wrap {
+                display: flex;
+                margin-left: 2vw;
+                margin-top: 4vh;
+            }
+
+            &-info {
+                margin-top: 1vh;
+                margin-left: 2vw;
+
+                &__name {
+                    font-weight: 600;
+                    font-size: 24px;
+                }
+
+                &__country {
+                    font-weight: 300;
+                    font-size: 14px;
+                }
+
+                .social {
+                    border-bottom: 1px solid rgba(85, 85, 85, 0.2);
+                    margin-right: 4vw;
+                    padding-bottom: 2vh;
+
+                    .fa {
+                        color: rgba(85, 85, 85, 0.5);
+                        padding-left: 0.5vw;
+
+                        &:first-child {
+                            padding-left: 0;
+                        }
+                    }
+                }
+
+                &__about {
+                    margin-top: 2vh;
+                    font-style: italic;
+
+                    &-title {
+                        font-size: 20px;
+                        font-weight: 500;
+                        margin-bottom: 2vh;
+
+                    }
+
+                    &-text {
+                        width: 24vw;
+
+                        font-size: 14px;
+                    }
+
+                    &-signature {
+                        margin-left: 8vw;
+                        margin-bottom: 2vh;
+                    }
+
+                }
+
+
+            }
+
+
+        }
+    }
+
+
+
+    // === note === //
+}
+
 // === / mixins === //
 
 
@@ -26,6 +189,20 @@
 
 $color-main-bg: #eaeaea;
 $color-section-bg: #ffffff;
+
+
+$screeen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+
+
+
+$screeen-xs-max: 575px;
+$screen-sm-max: 767px;
+$screen-md-max: 991px;
+$screen-lg-max: 1199px;
+
 //  === / variables === //
 
 
@@ -52,6 +229,17 @@ section {
     display: block;
 }
 
+header,
+section {
+    margin-right: 2vw;
+    margin-left: 2vw;
+}
+
+img {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
 
 
 ul li {
@@ -69,8 +257,14 @@ a:visited {
 body {
     @include font-main();
 
-    background-color: $color-main-bg;
+    background-color: $color-section-bg;
 
+}
+
+.logo {
+    img {
+        width: 100%;
+    }
 }
 
 // === / common  === // 
@@ -78,20 +272,13 @@ body {
 
 // ===  header === //
 
-.outside-img {
-    img {
-        background-color: $color-main-bg;
-    }
-}
 
 
 .header {
-    margin-bottom: 15vh;
+    margin-bottom: 5vw;
     height: 16vh;
-    box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.15);
 
     background-color: $color-section-bg;
-
 
     .logo {
         margin-top: 4vh;
@@ -106,9 +293,10 @@ body {
             &__link {
                 color: #000;
                 line-height: 1.2;
-                margin-right: 2vw;
+                margin-right: 3vw;
                 margin-top: 6vh;
                 text-transform: uppercase;
+
             }
         }
 
@@ -116,21 +304,25 @@ body {
 
     .search {
         margin-top: 5vh;
+        margin-left: 2vw;
+        margin-right: 2vw;
 
         form {
             background-color: $color-section-bg;
             padding-left: 2vw;
             border: 1px solid #c2c2c2;
-            margin-right: 3vw;
-            margin-left: 3vw;
+            margin-right: 1vw;
+            margin-left: 1vw;
+            width: 20vw;
 
 
         }
 
         input {
             outline: none;
-            width: 10vw;
-            padding-right: 10px;
+            width: 14vw;
+            padding-right: 1vw;
+            margin-left: 2vw;
 
 
 
@@ -155,6 +347,33 @@ body {
         }
     }
 
+    @media (max-width: $screen-lg-max) {
+
+        .search {
+            form {
+                padding-left: 0;
+
+                margin-right: 0;
+                margin-left: 0;
+            }
+        }
+
+        .nav {
+            margin-right: 0;
+
+            &-list {
+                &__link {
+                    margin-right: 0.7vw;
+                }
+            }
+        }
+    }
+
+    @media (max-width: $screen-md-max) {
+        .nav {
+            display: none;
+        }
+    }
 
 }
 
@@ -166,12 +385,12 @@ body {
 
 
 .hero {
-    margin-bottom: 15vh;
     padding-top: 6vh;
     padding-bottom: 6vh;
-    box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.15);
+    padding-left: 4vw;
 
-    background: url("../img/hero.png") no-repeat;
+
+    background: url("../img/hero.png") no-repeat 100% 100%;
     background-size: cover;
 
 
@@ -181,6 +400,7 @@ body {
 
         &__logo {
             margin-bottom: 5vh;
+            margin-right: 2vw;
         }
 
         &__title {
@@ -197,26 +417,24 @@ body {
 
         &__text {
             margin-bottom: 3vh;
-            width: 30vw;
+            max-width: 30vw;
 
             font-weight: 400;
         }
 
         &__link {
-            width: 10vw;
-            text-align: center;
-            border: 1px solid #c2c2c2;
 
-            &-btn {
-                display: inline-block;
-                padding: 0.5vh 1vw;
+            a {
+                @include btn-main();
 
-                font-size: 12px;
-                color: #000;
+                width: 10vw;
             }
+
         }
 
     }
+
+    @media (max-width: $screen-md-max) {}
 }
 
 
@@ -233,63 +451,339 @@ body {
 
 
 .meals {
+
     padding-top: 6vh;
     padding-bottom: 6vh;
-    box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.15);
 
-    background-color: white;
 
-    &-list {
-        &__item {
+    &-wrap {
+        display: flex;
+        justify-content: space-around;
+    }
 
-            width: 28vw;
-            &-photo {}
+    &__item {
+        margin-right: 1vw;
 
-            &-name {
-                margin-top: 1vh;
-                margin-bottom: 1vh;
-                font-weight: 400;
+        &:last-child {
+            margin-right: 0;
+        }
+
+
+
+
+        &-photo {
+            img {}
+        }
+
+        &-name {
+            width: 26vw;
+            margin-top: 1vh;
+            margin-bottom: 1vh;
+            font-weight: 400;
+        }
+
+        &-statistics {
+            display: flex;
+
+            font-family: 'OpenSans', sans-serif;
+            font-size: 12px;
+            line-height: 1.2;
+            font-weight: 300;
+            letter-spacing: 0.025em;
+            color: #555555;
+
+            .posted {
+                display: flex;
+                padding-right: 0.5vw;
+                margin-right: 0.5vw;
+                border-right: 1px solid #c4c4c4;
+                height: 2vh;
             }
 
-            &-statistics {
+            .comments {
                 display: flex;
+                padding-right: 0.5vw;
 
-                font-family: 'OpenSans', sans-serif;
-                font-size: 12px;
-                line-height: 1.2;
-                font-weight: 300;
-                letter-spacing: 0.025em;
-                color: #555555;
+            }
 
-                .posted {
-                    display: flex;
-                    padding-right: 0.5vw;
-                    margin-right: 0.5vw;
-                    border-right: 1px solid #c4c4c4;
-                    height: 2vh;
-                }
-                .comments {
-                    display: flex;
-                    padding-right: 0.5vw;
+            .previews {
+                display: flex;
+                padding-right: 0.5vw;
+            }
 
-                }
-
-                .previews {
-                    display: flex;
-                    padding-right: 0.5vw;
-                }
-
-                .fa {
-                    padding-right: 0.3vw;
-                }
+            .fa {
+                padding-right: 0.3vw;
             }
         }
     }
+
 
     .fa-comment {
         color: white;
         text-shadow: 0 0 3px #000;
     }
+
+    @media (max-width:$screen-lg-max) {
+        &-list {
+
+            &__item {
+
+                width: 26vw;
+                margin-right: 3vw;
+
+                &-photo {
+                    img {}
+                }
+
+                &-name {
+                    width: 23vw;
+                    margin-top: 1vh;
+                    margin-bottom: 1vh;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+
+    @media (max-width: $screen-md-max) {
+        &-list {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            &__item {
+
+
+                width: 60vw;
+                margin-right: 0;
+
+                &-photo {
+                    width: 50vw;
+
+                    img {}
+                }
+
+
+
+            }
+        }
+    }
 }
 
 // === / meals  === //
+
+
+
+// ===  recipe  === //
+
+.recipe {
+
+
+    &-wrap {
+        background: url("../img/recipe_desc.png") no-repeat center;
+        background-size: cover;
+
+    }
+
+    &-info {
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding-top: 2vh;
+
+        &__title {
+            @include font-second();
+            margin-right: 4vw;
+
+            font-size: 32px;
+            font-weight: 900;
+            color: #055555;
+        }
+
+        &__top {
+            display: flex;
+            justify-content: space-between;
+
+
+            &-time {
+                padding-right: 1vw;
+
+            }
+
+            &-level {}
+
+            &-favorite {
+                align-items: flex-end;
+                margin-left: 22vw;
+                margin-right: 4vw;
+
+                a {
+                    display: inline-block;
+                    text-transform: uppercase;
+                    border: 1px solid #c2c2c2;
+                    padding: 0.2vh 0.5vw;
+
+                    font-size: 12px;
+                    color: #000;
+
+                }
+
+            }
+        }
+
+        &__bottom {
+            max-width: 39vw;
+            overflow-y: auto;
+
+            margin-right: 2vw;
+
+            font-size: 16px;
+
+            &__ingredients {
+                @include font-main();
+                margin-bottom: 2vh;
+
+                font-weight: 400;
+
+
+
+            }
+
+            &__directions {
+                &_title {
+                    @include font-second();
+
+                    margin-bottom: 2vh;
+
+                    font-weight: 900;
+
+                }
+
+                &_desc {
+                    @include font-main();
+
+                    font-weight: 400;
+
+                    span {
+                        font-family: 'Sylfaen';
+                        font-weight: 400;
+                    }
+                }
+
+            }
+
+        }
+    }
+}
+
+// === / recipe  === //
+
+
+
+
+// ===  footer  === //
+
+.footer {
+    padding: 6vh 0;
+    background-color: #000;
+    color: rgba(254, 254, 254, 0.6);
+    font-size: 14px;
+
+
+
+    .nav {
+        margin-top: 3vh;
+
+        &-list {
+            &__link {
+                margin-left: 1vw;
+            }
+
+            a {
+                display: inline-block;
+                text-transform: uppercase;
+                color: rgba(254, 254, 254, 0.6);
+            }
+        }
+    }
+
+    .rights {
+        margin-left: 14vw;
+        font-size: 13px;
+
+
+    }
+
+    .social {
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+
+    .fa {
+        margin-left: 1vw;
+        margin-right: 0.5vw;
+    }
+
+
+    @media (max-width: $screen-md-max) {
+        .nav {
+            margin-top: 2vh;
+
+            &-list {
+                flex-direction: column;
+                align-items: flex-end;
+                justify-content: flex-end;
+                margin-left: 25vw;
+
+                border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+
+                &__link {
+                    margin-left: 1vw;
+                }
+
+                a {
+                    display: inline-block;
+                    text-transform: uppercase;
+                    color: rgba(254, 254, 254, 0.6);
+                }
+            }
+        }
+
+        .social {
+            justify-content: flex-start;
+            align-items: flex-start;
+
+        }
+
+    }
+
+    @media (max-width: $screen-sm-max) {
+        .nav {
+
+            &-list {
+
+                &__link {
+                    font-size: 12px;
+                    margin-left: 0;
+                }
+
+            }
+        }
+
+        .social {
+            justify-content: flex-start;
+            align-items: flex-start;
+
+        }
+
+        .rights {
+            .fa-copyright {
+                margin-left: 0;
+                margin-right: 6vw;
+            }
+        }
+
+    }
+}
+    // === / footer  === //
