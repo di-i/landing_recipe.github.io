@@ -13,13 +13,156 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
     <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <script src="js/wow.min.js"></script>
     <script>
         new WOW().init();
     </script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.easie-min.js"></script>
+    <script src="js/main.js"></script>
+
 </head>
 
 <body>
+
+    <nav class="cd-main-nav js-main-nav">
+        <ul class="cd-main-nav__list js-signin-modal-trigger">
+            <!-- inser more links here -->
+            <li><a class="cd-main-nav__item cd-main-nav__item--signin" href="#0" data-signin="login">Sign in</a></li>
+            <li><a class="cd-main-nav__item cd-main-nav__item--signup" href="#0" data-signin="signup">Sign up</a></li>
+        </ul>
+    </nav>
+    <div class="cd-signin-modal js-signin-modal">
+        <!-- this is the entire modal form, including the background -->
+        <div class="cd-signin-modal__container">
+            <!-- this is the container wrapper -->
+            <ul class="cd-signin-modal__switcher js-signin-modal-switcher js-signin-modal-trigger">
+                <li><a href="#0" data-signin="login" data-type="login">Sign in</a></li>
+                <li><a href="#0" data-signin="signup" data-type="signup">New account</a></li>
+            </ul>
+
+            <div class="cd-signin-modal__block js-signin-modal-block" data-type="login">
+                <!-- log in form -->
+                <form class="cd-signin-modal__form">
+                    <p class="cd-signin-modal__fieldset">
+                        <label
+                            class="cd-signin-modal__label cd-signin-modal__label--email cd-signin-modal__label--image-replace"
+                            for="signin-email">E-mail</label>
+                        <input
+                            class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border"
+                            id="signin-email" type="email" placeholder="E-mail">
+                        <span class="cd-signin-modal__error">Error message here!</span>
+                    </p>
+
+                    <p class="cd-signin-modal__fieldset">
+                        <label
+                            class="cd-signin-modal__label cd-signin-modal__label--password cd-signin-modal__label--image-replace"
+                            for="signin-password">Password</label>
+                        <input
+                            class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border"
+                            id="signin-password" type="text" placeholder="Password">
+                        <a href="#0" class="cd-signin-modal__hide-password js-hide-password">Hide</a>
+                        <span class="cd-signin-modal__error">Error message here!</span>
+                    </p>
+
+                    <p class="cd-signin-modal__fieldset">
+                        <input type="checkbox" id="remember-me" checked class="cd-signin-modal__input ">
+                        <label for="remember-me">Remember me</label>
+                    </p>
+
+                    <p class="cd-signin-modal__fieldset">
+                        <input class="cd-signin-modal__input cd-signin-modal__input--full-width" type="submit"
+                            value="Login">
+                    </p>
+                </form>
+
+                <p class="cd-signin-modal__bottom-message js-signin-modal-trigger"><a href="#0"
+                        data-signin="reset">Forgot your password?</a></p>
+            </div> <!-- cd-signin-modal__block -->
+
+            <div class="cd-signin-modal__block js-signin-modal-block" data-type="signup">
+                <!-- sign up form -->
+                <form class="cd-signin-modal__form">
+                    <p class="cd-signin-modal__fieldset">
+                        <label
+                            class="cd-signin-modal__label cd-signin-modal__label--username cd-signin-modal__label--image-replace"
+                            for="signup-username">Username</label>
+                        <input
+                            class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border"
+                            id="signup-username" type="text" placeholder="Username">
+                        <span class="cd-signin-modal__error">Error message here!</span>
+                    </p>
+
+                    <p class="cd-signin-modal__fieldset">
+                        <label
+                            class="cd-signin-modal__label cd-signin-modal__label--email cd-signin-modal__label--image-replace"
+                            for="signup-email">E-mail</label>
+                        <input
+                            class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border"
+                            id="signup-email" type="email" placeholder="E-mail">
+                        <span class="cd-signin-modal__error">Error message here!</span>
+                    </p>
+
+                    <p class="cd-signin-modal__fieldset">
+                        <label
+                            class="cd-signin-modal__label cd-signin-modal__label--password cd-signin-modal__label--image-replace"
+                            for="signup-password">Password</label>
+                        <input
+                            class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border"
+                            id="signup-password" type="text" placeholder="Password">
+                        <a href="#0" class="cd-signin-modal__hide-password js-hide-password">Hide</a>
+                        <span class="cd-signin-modal__error">Error message here!</span>
+                    </p>
+
+                    <p class="cd-signin-modal__fieldset">
+                        <input type="checkbox" id="accept-terms" class="cd-signin-modal__input ">
+                        <label for="accept-terms">I agree to the <a href="#0">Terms</a></label>
+                    </p>
+
+                    <p class="cd-signin-modal__fieldset">
+                        <input
+                            class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding"
+                            type="submit" value="Create account">
+                    </p>
+                </form>
+            </div> <!-- cd-signin-modal__block -->
+
+            <div class="cd-signin-modal__block js-signin-modal-block" data-type="reset">
+                <!-- reset password form -->
+                <p class="cd-signin-modal__message">Lost your password? Please enter your email address. You will
+                    receive a link to create a new password.</p>
+
+                <form class="cd-signin-modal__form">
+                    <p class="cd-signin-modal__fieldset">
+                        <label
+                            class="cd-signin-modal__label cd-signin-modal__label--email cd-signin-modal__label--image-replace"
+                            for="reset-email">E-mail</label>
+                        <input
+                            class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border"
+                            id="reset-email" type="email" placeholder="E-mail">
+                        <span class="cd-signin-modal__error">Error message here!</span>
+                    </p>
+
+                    <p class="cd-signin-modal__fieldset">
+                        <input
+                            class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding"
+                            type="submit" value="Reset password">
+                    </p>
+                </form>
+
+                <p class="cd-signin-modal__bottom-message js-signin-modal-trigger"><a href="#0" data-signin="login">Back
+                        to log-in</a></p>
+            </div> <!-- cd-signin-modal__block -->
+            <a href="#0" class="cd-signin-modal__close js-close">Close</a>
+        </div> <!-- cd-signin-modal__container -->
+    </div> <!-- cd-signin-modal -->
+
+
+
+
 
 
     <!------------    header -------------->
@@ -31,38 +174,24 @@
                         <img src="img/logo_dark.png" alt="Logo_mini">
                     </div>
                 </div>
-                <div class="col-7">
-                    <div class="nav">
-                        <ul class="nav-list d-flex align-items-center">
-                            <li class="nav-list__item">
-                                <a class="nav-list__link" href="#">
-                                    HOME
-                                </a>
-                            </li>
-                            <li class="nav-list__item">
-                                <a class="nav-list__link" href="#">
-                                    Recipes
-                                </a>
-                            </li>
-                            <li class="nav-list__item">
-                                <a class="nav-list__link" href="#">
-                                    Photo Galleries
-                                </a>
-                            </li>
-                            <li class="nav-list__item">
-                                <a class="nav-list__link" href="#">
-                                    Videos
-                                </a>
-                            </li>
-                            <li class="nav-list__item">
-                                <a class="nav-list__link" href="#">
-                                    All Categories
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="col-4">
+                    <nav>
+                        <div class="nav">
+                            <button><a href="#">Home</a></button>
+                            <div class="nav-recipes">
+                                <button>Recipes</button>
+                                <ul>
+                                    <li><a href="#">RECOMMENDED</a></li>
+                                    <li><a href="#">POPULAR</a></li>
+                                    <li><a href="#">QUICK & EASY</a></li>
+                                    <li><a href="#">HEALTHY</a></li>
+                                    <li><a href="#">NEWEST</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
                 </div>
-                <div class="col-3">
+                <div class="col-lg-3 col-3">
                     <div class="search">
                         <form action="">
                             <i class="fa fa-search" aria-hidden="true"></i>
@@ -114,156 +243,146 @@
     <section class="meals">
         <div class="container">
             <div class="row">
-                    <div class="col-12 meals-wrap">
-                        <div class="meals__item">
-                            <div class="meals__item-photo">
-                                <img src="img/meals_1.png" alt="">
+                <div class="col-12 meals-wrap">
+                    <div class="meals__item">
+                        <div class="meals__item-photo">
+                            <img src="img/meals_1.png" alt="">
+                        </div>
+                        <div class="meals__item-name">
+                            Raspberry & Cream Frozen Yogurt Pie
+                        </div>
+                        <div class="meals__item-statistics">
+                            <div class="posted">
+                                <i class="fa fa-clock-o"></i>
+                                <p>35mins</p>
                             </div>
-                            <div class="meals__item-name">
-                                Raspberry & Cream Frozen Yogurt Pie
+                            <div class="comments">
+                                <i class="fa fa-comment"></i>
+                                <p>7</p>
                             </div>
-                            <div class="meals__item-statistics">
-                                <div class="posted">
-                                    <i class="fa fa-clock-o"></i>
-                                    <p>35mins</p>
-                                </div>
-                                <div class="comments">
-                                    <i class="fa fa-comment"></i>
-                                    <p>7</p>
-                                </div>
-                                <div class="previews">
-                                    <i class="fa fa-eye"></i>
-                                    <p>14</p>
-                                </div>
+                            <div class="previews">
+                                <i class="fa fa-eye"></i>
+                                <p>14</p>
                             </div>
                         </div>
-                        <div class="meals__item">
-                            <div class="meals__item-photo">
-                                <img src="img/meals_2.png" alt="">
-                            </div>
-                            <div class="meals__item-name">
-                                Giant Ice Cream Sandwich
-                            </div>
-                            <div class="meals__item-statistics">
-                                <div class="posted">
-                                    <i class="fa fa-clock-o"></i>
-                                    <p>20mins</p>
-                                </div>
-                                <div class="comments">
-                                    <i class="fa fa-comment"></i>
-                                    <p>4</p>
-                                </div>
-                                <div class="previews">
-                                    <i class="fa fa-eye"></i>
-                                    <p>356</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="meals__item">
-                            <div class="meals__item-photo">
-                                <img src="img/meals_3.png" alt="">
-                            </div>
-                            <div class="meals__item-name">
-                                Dark Chocolate Crunch Ice Cream
-                                Sandwich Cake
-                            </div>
-                            <div class="meals__item-statistics">
-                                <div class="posted">
-                                    <i class="fa fa-clock-o"></i>
-                                    <p>15mins</p>
-                                </div>
-                                <div class="comments">
-                                    <i class="fa fa-comment"></i>
-                                    <p>4</p>
-                                </div>
-                                <div class="previews">
-                                    <i class="fa fa-eye"></i>
-                                    <p>167</p>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
+                    <div class="meals__item">
+                        <div class="meals__item-photo">
+                            <img src="img/meals_2.png" alt="">
+                        </div>
+                        <div class="meals__item-name">
+                            Giant Ice Cream Sandwich
+                        </div>
+                        <div class="meals__item-statistics">
+                            <div class="posted">
+                                <i class="fa fa-clock-o"></i>
+                                <p>20mins</p>
+                            </div>
+                            <div class="comments">
+                                <i class="fa fa-comment"></i>
+                                <p>4</p>
+                            </div>
+                            <div class="previews">
+                                <i class="fa fa-eye"></i>
+                                <p>356</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="meals__item">
+                        <div class="meals__item-photo">
+                            <img src="img/meals_3.png" alt="">
+                        </div>
+                        <div class="meals__item-name">
+                            Dark Chocolate Crunch Ice Cream
+                            Sandwich Cake
+                        </div>
+                        <div class="meals__item-statistics">
+                            <div class="posted">
+                                <i class="fa fa-clock-o"></i>
+                                <p>15mins</p>
+                            </div>
+                            <div class="comments">
+                                <i class="fa fa-comment"></i>
+                                <p>4</p>
+                            </div>
+                            <div class="previews">
+                                <i class="fa fa-eye"></i>
+                                <p>167</p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
 
-        <!------------  / meals -------------->
+    <!------------  / meals -------------->
 
 
 
-        <!------------  footer -------------->
+    <!------------  footer -------------->
 
-        <footer class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-2 col-3">
-                        <div class="logo">
-                            <img src="img/logo_white.png" alt="Logo_mini">
-                        </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-3">
+                    <div class="logo">
+                        <img src="img/logo_white.png" alt="Logo_mini">
                     </div>
-                    <div class="col-lg-8 col-9">
+                </div>
+                <div class="col-6">
+                    <nav>
                         <div class="nav">
-                            <ul class="nav-list d-flex">
-                                <li class="nav-list__item">
-                                    <a class="nav-list__link" href="#">
-                                        HOME
-                                    </a>
-                                </li>
-                                <li class="nav-list__item">
-                                    <a class="nav-list__link" href="#">
-                                        Recipes
-                                    </a>
-                                </li>
-                                <li class="nav-list__item">
-                                    <a class="nav-list__link" href="#">
-                                        Photo Galleries
-                                    </a>
-                                </li>
-                                <li class="nav-list__item">
-                                    <a class="nav-list__link" href="#">
-                                        Videos
-                                    </a>
-                                </li>
-                                <li class="nav-list__item">
-                                    <a class="nav-list__link" href="#">
-                                        All Categories
-                                    </a>
-                                </li>
-                            </ul>
+                            <button><a class="nav-home" href="#">Home</a></button>
+                            <div class="nav-recipes">
+                                <button>Recipes</button>
+                                <ul>
+                                    <li><a href="#">RECOMMENDED</a></li>
+                                    <li><a href="#">POPULAR</a></li>
+                                    <li><a href="#">QUICK & EASY</a></li>
+                                    <li><a href="#">HEALTHY</a></li>
+                                    <li><a href="#">NEWEST</a></li>
+                                </ul>
+                            </div>
+                            <div class="nav-login">
+                                <button>Login</button>
+                                <ul>
+                                    <li><a href="#">Sign in</a></li>
+                                    <li><a href="#">Sign up</a></li>
+                                </ul>
+                            </div>
                         </div>
+                    </nav>
+                </div>
+                <div class="col-3">
+                    <div class="rights">
+                        <i class="fa fa-copyright">2016-2017 LEMON. All right reserved</i>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-4">
-                        <div class="social d-flex">
-                            <i class="fa fa-google-plus"></i>
-                            <i class="fa fa-twitter"></i>
-                            <i class="fa fa-facebook"></i>
-                            <i class="fa fa-pinterest"></i>
-                        </div>
-                    </div>
-                    <div class="col-8">
-                        <div class="rights">
-                            <i class="fa fa-copyright">2016-2017 LEMON. All right reserved</i>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-        </footer>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="social d-flex">
+                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-pinterest"></i>
+                </div>
+            </div>
+        </div>
 
+        </div>
+    </footer>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.easie-min.js"></script>
+    <script src="js/main.js"></script>
 
-        <!------------  / footer -------------->
+    <!------------  / footer -------------->
 
-
-
-
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/jquery.easie-min.js"></script>
-        <script src="js/main.js"></script>
 </body>
 
 </html>
