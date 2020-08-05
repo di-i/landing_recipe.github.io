@@ -171,6 +171,9 @@ body {
   color: #a9a9a9;
 }
 @media (max-width: 1199px) {
+  .header {
+    display: flex;
+  }
   .header .search form {
     padding-left: 0;
     margin-right: 0;
@@ -507,133 +510,62 @@ textarea::-ms-clear {
   Login/Signup modal window - by CodyHouse.co
 
   -------------------------------- */
-.cd-main-header {
-  position: relative;
-  z-index: 1;
-  height: 50px;
-  background: #343642;
-}
-
-.cd-main-header::after {
-  /* clearfix */
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.cd-main-header__logo {
-  float: left;
-  margin: 4px 0 0 5%;
-  /* reduce logo size on mobile and make sure it is left aligned with the transform-origin property */
-  transform-origin: 0 50%;
-  transform: scale(0.8);
-}
-
-.cd-main-header__logo img {
-  display: block;
-}
-
-@media only screen and (min-width: 768px) {
-  .cd-main-header {
-    height: 80px;
-  }
-
-  .cd-main-header__logo {
-    margin: 20px 0 0 5%;
-    transform: scale(1);
-  }
-}
 .cd-main-nav {
-  float: right;
-  margin-right: 5%;
-  width: 44px;
-  height: 100%;
-  background: url("../img/cd-icon-menu.svg") no-repeat center center;
+  display: flex;
   cursor: pointer;
 }
 
+.cd-main-nav {
+  /* reset style */
+  background: none;
+  cursor: auto;
+  margin-top: 3vh;
+}
+
 .cd-main-nav__list {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transform: translateY(-100%);
+  /* reset style */
+  transform: translateY(0);
+  line-height: 80px;
 }
 
 .cd-main-nav__list.cd-main-nav__list--is-visible {
-  transform: translateY(50px);
+  /* reset style */
+  transform: translateY(0);
+}
+
+.cd-main-nav__list li {
+  display: inline-block;
 }
 
 .cd-main-nav__item {
-  display: block;
-  height: 50px;
-  line-height: 50px;
-  padding-left: 5%;
-  background: #292a34;
-  border-top: 1px solid #3b3d4b;
-  color: #921026;
+  display: inline-block;
+  line-height: normal;
+  background: transparent;
 }
 
-@media only screen and (min-width: 768px) {
-  .cd-main-nav {
-    /* reset style */
-    width: auto;
-    height: auto;
-    background: none;
-    cursor: auto;
-  }
-
-  .cd-main-nav__list {
-    /* reset style */
-    position: static;
-    width: auto;
-    transform: translateY(0);
-    line-height: 80px;
-  }
-
-  .cd-main-nav__list.cd-main-nav__list--is-visible {
-    /* reset style */
-    transform: translateY(0);
-  }
-
-  .cd-main-nav__list li {
-    display: inline-block;
-    margin-left: 1em;
-  }
-
-  .cd-main-nav__list li:nth-last-child(2) {
-    margin-left: 2em;
-  }
-
-  .cd-main-nav__item {
-    display: inline-block;
-    height: auto;
-    line-height: normal;
-    background: transparent;
-  }
-
-  .cd-main-nav__item.cd-main-nav__item--signin,
+.cd-main-nav__item.cd-main-nav__item--signin,
 .cd-main-nav__item.cd-main-nav__item--signup {
-    padding: 0.6em 1em;
-    border-radius: 0;
-  }
-
-  .cd-main-nav__item.cd-main-nav__item--signin {
-    background-color: #d24d57;
-    border: none;
-    border: 2px solid #d24d57;
-    border-radius: 3px;
-    border-bottom: 3px solid #B5002A;
-    color: #fff;
-  }
-
-  .cd-main-nav__item.cd-main-nav__item--signup {
-    border: none;
-    border: 2px solid #d24d57;
-    border-radius: 3px;
-    border-bottom: 3px solid #B5002A;
-  }
+  padding: 1vh 1.5vw;
+  border-radius: 0;
 }
+
+.cd-main-nav__item.cd-main-nav__item--signin {
+  background-color: #d24d57;
+  border: none;
+  border: 2px solid #d24d57;
+  border-radius: 3px;
+  border-bottom: 3px solid #B5002A;
+  color: #fff;
+}
+
+.cd-main-nav__item.cd-main-nav__item--signup {
+  border: none;
+  border: 2px solid #d24d57;
+  border-radius: 3px;
+  border-bottom: 3px solid #B5002A;
+  color: #d24d57;
+}
+
 /* -------------------------------- 
 
   x sigin/signup popup 
@@ -670,7 +602,7 @@ textarea::-ms-clear {
   transform: translateY(-30px);
   transition: transform 0.3s;
 }
-@media (max-width: 991px) {
+@media (max-width: 767px) {
   .cd-signin-modal__container {
     margin: 0;
   }
@@ -715,16 +647,6 @@ textarea::-ms-clear {
   color: rgba(210, 77, 87, 0.8);
 }
 
-@media only screen and (min-width: 600px) {
-  .cd-signin-modal__container {
-    margin: 4em auto;
-  }
-
-  .cd-signin-modal__switcher a {
-    height: 70px;
-    line-height: 70px;
-  }
-}
 .cd-signin-modal__form {
   padding: 1.4em;
 }
