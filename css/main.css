@@ -126,36 +126,49 @@ body {
   outline: none;
 }
 .header .search {
-  margin-top: 5vh;
-  margin-left: 2vw;
-  margin-right: 2vw;
-}
-.header .search form {
-  background-color: #ffffff;
-  padding-left: 2vw;
-  border: 1px solid #c2c2c2;
-  margin-right: 1vw;
-  margin-left: 1vw;
-  width: 20vw;
+  margin-top: 6vh;
 }
 .header .search input {
   outline: none;
-  width: 14vw;
-  padding-right: 1vw;
-  margin-left: 2vw;
-  background-color: #ffffff;
 }
-.header .search input:focus, .header .search input:active {
-  opacity: 0.3;
+.header .search input[type=search] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  font-family: inherit;
+  font-size: 100%;
 }
-.header .search input::placeholder {
-  text-transform: uppercase;
-  font-size: 12px;
-  text-align: center;
+.header .search input::-webkit-search-decoration,
+.header .search input::-webkit-search-cancel-button {
+  display: none;
+  /* remove the search and cancel icon */
 }
-.header .search .fa {
-  color: #c1c1c1;
-  font-size: 12px;
+.header .search input[type=search] {
+  width: 18px;
+  padding-left: 10px;
+  background: url("../img/search.svg") no-repeat 2px center;
+  border: solid 1px transparent;
+  color: transparent;
+  cursor: pointer;
+  border-radius: 10em;
+  transition: all 0.5s;
+}
+.header .search input[type=search]::placeholder {
+  color: transparent;
+}
+.header .search input[type=search]:hover {
+  background-color: #fff;
+}
+.header .search input[type=search]:focus {
+  width: 130px;
+  padding-left: 32px;
+  color: #000;
+  background-color: #fff;
+  cursor: auto;
+  border-color: rgba(215, 102, 102, 0.5);
+  box-shadow: 0 0 5px rgba(215, 102, 102, 0.5);
+}
+.header .search input[type=search]:focus::placeholder {
+  color: #a9a9a9;
 }
 @media (max-width: 1199px) {
   .header .search form {
@@ -657,6 +670,11 @@ textarea::-ms-clear {
   transform: translateY(-30px);
   transition: transform 0.3s;
 }
+@media (max-width: 991px) {
+  .cd-signin-modal__container {
+    margin: 0;
+  }
+}
 
 .cd-signin-modal--is-visible .cd-signin-modal__container {
   transform: translateY(0);
@@ -904,10 +922,9 @@ textarea::-ms-clear {
   position: absolute;
   width: 100%;
   left: 0;
-  bottom: 125px;
-  left: 100px;
+  bottom: -50px;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .cd-signin-modal__bottom-message a {
