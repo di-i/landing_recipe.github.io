@@ -587,13 +587,14 @@ body {
     }
 
     @media (max-width: $screen-sm-max) {
-       background-position: center center;
-      &-info {
-        &__title {
-            display: none;
-        }
+        background-position: center center;
 
-      }
+        &-info {
+            &__title {
+                display: none;
+            }
+
+        }
     }
 }
 
@@ -711,11 +712,12 @@ body {
 
         &__item {
             width: 60vw;
-           
+
             &-name {
                 margin-left: 2vw;
                 width: 50vw;
             }
+
             &-photo {
                 img {
                     width: 120%;
@@ -1449,13 +1451,14 @@ textarea::-ms-clear {
 .sidebar-nav li.sidebar-nav-item a {
     display: block;
     text-decoration: none;
-    color: #fff;
+    color: $color-btn-popup;
     padding: 15px;
 }
 
 .sidebar-nav li a:hover {
     text-decoration: none;
-    color: #fff;
+    transform: scale(1.1);
+    transition: all 0.5 ease;
     background: rgba(255, 255, 255, 0.2);
 }
 
