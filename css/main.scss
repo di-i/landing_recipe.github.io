@@ -199,7 +199,7 @@
     .sidebar-nav {
         position: absolute;
         top: 0;
-        width: 250px;
+        width: 40vw;
         margin: 0;
         padding: 0;
         list-style: none;
@@ -252,14 +252,14 @@
     }
 
     #sidebar-wrapper.active {
-        right: 250px;
-        width: 250px;
+        right: 310px;
+        width: 50vw;
         transition: all 0.4s ease 0s;
     }
 
     .menu-toggle {
         position: fixed;
-        right: 12vh;
+        right: 14vh;
         top: 3vh;
         text-align: center;
         text-decoration: none;
@@ -394,6 +394,7 @@
         opacity: 0;
         -webkit-transition: opacity 0.3s, visibility 0.3s;
         transition: opacity 0.3s, visibility 0.3s;
+
     }
 
     .cd-signin-modal.cd-signin-modal--is-visible {
@@ -942,7 +943,7 @@ body {
 
         input[type=search] {
             width: 24px;
-            padding-left: 10px;
+            padding-left: 2vw;
             background: url("../img/search.svg") no-repeat 2px center;
             border: solid 1px transparent;
 
@@ -970,7 +971,7 @@ body {
         }
 
         input[type=search]:focus {
-            width: 25vw;
+            width: 40vw;
             padding: 1vh 2vw 1vh 5vw;
             color: #000;
             background-color: #fff;
@@ -983,6 +984,13 @@ body {
 
             &::placeholder {
                 color: #a9a9a9;
+                padding-left: 6vw;
+            }
+
+            @media (max-width: $screeen-xs-max) {
+                width: 70vw;
+                padding-left: 18vw;
+                
             }
         }
 
