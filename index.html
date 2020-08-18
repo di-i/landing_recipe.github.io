@@ -17,12 +17,12 @@
 
     <script src="js/wow.min.js"></script>
     <script>
-        new WOW().init();
+        var wow = new WOW({
+            mobile: false,
+        });
+        wow.init();
     </script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery.easie-min.js"></script>
-    <script src="js/main.js"></script>
+
 
 </head>
 
@@ -41,17 +41,19 @@
     <header class="header">
         <div class="container">
             <div class="row">
-                <div class="col-2">
+                <div class="col-md-2 col-5">
                     <div class="logo">
                         <img src="img/logo_dark.png" alt="Logo_mini">
                     </div>
                 </div>
                 <div class="col-10">
                     <nav>
-                        <div class="nav">
-                            <button class="animate__animated animate__fadeInUp wow" data-wow-delay="0.5s"><a href="#">Home</a></button>
+                        <div class="nav animate__animated animate__fadeInUp wow">
+                            <button class="animate__animated animate__fadeInUp wow" data-wow-delay="0.5s"><a
+                                    href="#">Home</a></button>
                             <div class="nav-recipes">
-                                <button class="animate__animated animate__fadeInUp wow" data-wow-delay="0.7s">Recipes</button>
+                                <button class="animate__animated animate__fadeInUp wow"
+                                    data-wow-delay="0.6s">Recipes</button>
                                 <ul>
                                     <li><a href="#">RECOMMENDED</a></li>
                                     <li><a href="#">POPULAR</a></li>
@@ -60,15 +62,18 @@
                                     <li><a href="#">NEWEST</a></li>
                                 </ul>
                             </div>
-                            <button class="animate__animated animate__fadeInUp wow" data-wow-delay="0.9s"><a href="#">Photo Galleries</a></button>
-                            <button class="animate__animated animate__fadeInUp wow" data-wow-delay="1.1s"><a href="#">Videos</a></button>
-                            <button class="animate__animated animate__fadeInUp wow" data-wow-delay="1.2s"><a href="#">All Categories</a></button>
+                            <button class="animate__animated animate__fadeInUp wow" data-wow-delay="0.7s"><a
+                                    href="#">Photo Galleries</a></button>
+                            <button class="animate__animated animate__fadeInUp wow" data-wow-delay="0.8s"><a
+                                    href="#">Videos</a></button>
+                            <button class="animate__animated animate__fadeInUp wow" data-wow-delay="0.9s"><a
+                                    href="#">All Categories</a></button>
                         </div>
                     </nav>
                 </div>
                 <div class="col-3">
                     <a class="menu-toggle rounded" href="#">
-                        <i class="fa fa-bars fa-2x"></i>
+                        <i class="fa fa-bars fa-4x"></i>
                     </a>
                     <nav id="sidebar-wrapper">
                         <ul class="sidebar-nav">
@@ -103,10 +108,10 @@
                         <nav class="cd-main-nav js-main-nav">
                             <ul class="cd-main-nav__list js-signin-modal-trigger">
                                 <!-- inser more links here -->
-                                <li><a class="cd-main-nav__item cd-main-nav__item--signin animate__animated animate__fadeInRight wow" data-wow-delay="0.5s" href="#0"
-                                        data-signin="login">Sign in</a></li>
-                                <li><a class="cd-main-nav__item cd-main-nav__item--signup animate__animated animate__fadeInRight wow" data-wow-delay="0.8s" href="#0"
-                                        data-signin="signup">Sign up</a></li>
+                                <li><a class="cd-main-nav__item cd-main-nav__item--signin animate__animated animate__fadeInRight wow"
+                                        data-wow-delay="0.5s" href="#0" data-signin="login">Sign in</a></li>
+                                <li><a class="cd-main-nav__item cd-main-nav__item--signup animate__animated animate__fadeInRight wow"
+                                        data-wow-delay="0.8s" href="#0" data-signin="signup">Sign up</a></li>
                             </ul>
                         </nav>
                         <div class="cd-signin-modal js-signin-modal">
@@ -288,13 +293,16 @@
                 <div class="col-12">
                     <div class="meals-wrap">
                         <div class="meals__item">
-                            <div class="meals__item-photo animate__animated animate__bounceInDown wow" data-wow-delay="0.5s">
+                            <div class="meals__item-photo animate__animated animate__bounceInLeft wow"
+                                data-wow-delay="0.5s">
                                 <img src="img/meals_1.png" alt="">
                             </div>
-                            <div class="meals__item-name animate__animated animate__fadeInDown wow" data-wow-delay="0.6s">
+                            <div class="meals__item-name animate__animated animate__fadeInDown wow"
+                                data-wow-delay="0.6s">
                                 Raspberry & Cream Frozen Yogurt Pie
                             </div>
-                            <div class="meals__item-statistics animate__animated animate__fadeInLeft wow" data-wow-delay="0.8">
+                            <div class="meals__item-statistics animate__animated animate__fadeInLeft wow"
+                                data-wow-delay="0.8">
                                 <div class="posted">
                                     <i class="fa fa-clock-o"></i>
                                     <p>35mins</p>
@@ -310,13 +318,16 @@
                             </div>
                         </div>
                         <div class="meals__item">
-                            <div class="meals__item-photo animate__animated animate__bounceInDown wow" data-wow-delay="0.7s">
+                            <div class="meals__item-photo animate__animated animate__bounceInLeft wow"
+                                data-wow-delay="0.7s">
                                 <img src="img/meals_2.png" alt="">
                             </div>
-                            <div class="meals__item-name  animate__animated animate__fadeInDown wow" data-wow-delay="0.8s">
+                            <div class="meals__item-name  animate__animated animate__fadeInDown wow"
+                                data-wow-delay="0.8s">
                                 Giant Ice Cream Sandwich
                             </div>
-                            <div class="meals__item-statistics animate__animated animate__fadeInLeft wow" data-wow-delay="1s">
+                            <div class="meals__item-statistics animate__animated animate__fadeInLeft wow"
+                                data-wow-delay="1s">
                                 <div class="posted">
                                     <i class="fa fa-clock-o"></i>
                                     <p>20mins</p>
@@ -332,14 +343,17 @@
                             </div>
                         </div>
                         <div class="meals__item">
-                            <div class="meals__item-photo animate__animated animate__bounceInDown wow" data-wow-delay="0.9s">
+                            <div class="meals__item-photo animate__animated animate__bounceInLeft wow"
+                                data-wow-delay="0.9s">
                                 <img src="img/meals_3.png" alt="">
                             </div>
-                            <div class="meals__item-name  animate__animated animate__fadeInDown wow" data-wow-delay="1s">
+                            <div class="meals__item-name  animate__animated animate__fadeInDown wow"
+                                data-wow-delay="1s">
                                 Dark Chocolate Crunch Ice Cream
                                 Sandwich Cake
                             </div>
-                            <div class="meals__item-statistics animate__animated animate__fadeInLeft wow" data-wow-delay="1.1s">
+                            <div class="meals__item-statistics animate__animated animate__fadeInLeft wow"
+                                data-wow-delay="1.1s">
                                 <div class="posted">
                                     <i class="fa fa-clock-o"></i>
                                     <p>15mins</p>
@@ -370,12 +384,12 @@
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-3">
+                <div class="col-md-3 col-5">
                     <div class="logo animate__animated animate__fadeInLeft wow" data-wow-delay="0.5">
                         <img src="img/logo_white.png" alt="Logo_mini">
                     </div>
                 </div>
-                <div class="col-9">
+                <div class="col-12">
                     <nav>
                         <div class="nav animate__animated animate__fadeInRight wow" data-wow-delay="0.7">
                             <button><a class="nav-home" href="#">Home</a></button>
@@ -402,10 +416,14 @@
                         <i class="fa fa-copyright">2016-2017 LEMON. All right reserved</i>
                     </div>
                     <div class="social d-flex">
-                        <a class="animate__animated animate__fadeInUp wow" data-wow-delay="1s" href="#"><i class="fa fa-google-plus"></i></a>
-                        <a class="animate__animated animate__fadeInUp wow" data-wow-delay="1.2s" href="#"><i class="fa fa-twitter"></i></a>
-                        <a class="animate__animated animate__fadeInUp wow" data-wow-delay="1.3s" href="#"><i class="fa fa-facebook"></i></a>
-                        <a class="animate__animated animate__fadeInUp wow" data-wow-delay="1.5s" href="#"><i class="fa fa-pinterest"></i>
+                        <a class="animate__animated animate__fadeInUp wow" data-wow-delay="1s" href="#"><i
+                                class="fa fa-google-plus"></i></a>
+                        <a class="animate__animated animate__fadeInUp wow" data-wow-delay="1.2s" href="#"><i
+                                class="fa fa-twitter"></i></a>
+                        <a class="animate__animated animate__fadeInUp wow" data-wow-delay="1.3s" href="#"><i
+                                class="fa fa-facebook"></i></a>
+                        <a class="animate__animated animate__fadeInUp wow" data-wow-delay="1.5s" href="#"><i
+                                class="fa fa-pinterest"></i>
                     </div>
                 </div>
             </div>
@@ -414,7 +432,7 @@
     </footer>
 
 
-     <!------------  / footer -------------->
+    <!------------  / footer -------------->
 
 
 
