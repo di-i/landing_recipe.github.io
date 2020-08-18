@@ -183,115 +183,16 @@
 }
 
 
-@mixin burger-menu {
-    #sidebar-wrapper {
-        position: fixed;
-        z-index: 2;
-        right: 0;
-        width: 20vw;
-        height: 60vh;
-        transition: all 0.4s ease 0s;
-        transform: translateX(250px);
-        background: rgba(255, 255, 255, 0.8);
-        border-left: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .sidebar-nav {
-        position: absolute;
-        top: 0;
-        width: 40vw;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-
-
-
-
-    }
-
-
-
-    .sidebar-nav li.sidebar-nav-item a {
-        display: block;
-        text-decoration: none;
-        color: $color-btn-popup;
-        padding: 15px;
-        font-weight: 500;
-
-    }
-
-    .sidebar-nav li a:hover {
-        text-decoration: none;
-        transform: scale(1.1);
-        transition: all 0.5 ease;
-        background: rgba(255, 255, 255, 0.2);
-    }
-
-    .sidebar-nav li a:active,
-    .sidebar-nav li a:focus {
-        text-decoration: none;
-    }
-
-    .sidebar-nav>.sidebar-brand {
-        font-size: 1.2rem;
-        background: rgba(52, 58, 64, 0.1);
-        height: 80px;
-        line-height: 50px;
-        padding-top: 15px;
-        padding-bottom: 15px;
-        padding-left: 15px;
-    }
-
-    .sidebar-nav>.sidebar-brand a {
-        color: #fff;
-    }
-
-    .sidebar-nav>.sidebar-brand a:hover {
-        color: #fff;
-        background: none;
-    }
-
-    #sidebar-wrapper.active {
-        right: 310px;
-        width: 50vw;
-        transition: all 0.4s ease 0s;
-    }
-
-    .menu-toggle {
-        position: fixed;
-        right: 14vh;
-        top: 3vh;
-        text-align: center;
-        text-decoration: none;
-        background: transparent;
-        line-height: 50px;
-        z-index: 60;
-
-        .fa-bars {
-            color: #a9a9a9;
-            z-index: 60;
-        }
-
-        .fa {
-            margin-right: 3vw;
-            margin-top: 6vh;
-        }
-    }
-
-    .menu-toggle:focus,
-    .menu-toggle:hover {
-        text-decoration: none;
-        opacity: 0.6;
-    }
-
-}
 
 @mixin popup {
 
     input,
     textarea {
         font-family: "PT Sans", sans-serif;
-        font-size: 1.6rem;
+        font-size: 1.2rem;
+        @media (max-width: $screen-xs-max) {
+            font-size: 10px;
+        }
     }
 
     input::-ms-clear,
@@ -586,8 +487,12 @@
         -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         color: #343642;
+
+        @media (max-width: $screen-xs-max) {
+            font-size: 10px;
+        }
     }
 
     .cd-signin-modal__error {
@@ -710,6 +615,8 @@
 
 }
 
+
+
 // === / mixins === //
 
 
@@ -720,14 +627,14 @@ $color-section-bg: #ffffff;
 $color-btn-popup: rgba(210, 77, 87, 1);
 
 
-$screeen-sm: 576px;
+$screen-sm: 576px;
 $screen-md: 768px;
 $screen-lg: 992px;
 $screen-xl: 1200px;
 
 
 
-$screeen-xs-max: 575px;
+$screen-xs-max: 575px;
 $screen-sm-max: 767px;
 $screen-md-max: 991px;
 $screen-lg-max: 1199px;
@@ -793,6 +700,12 @@ button:active {
     opacity: .5;
 }
 
+.menu,
+#sidebar-wrapper,
+.menu-toggle,
+.fa-bars {
+    display: none;
+}
 
 body {
     @include font-main();
@@ -825,7 +738,6 @@ body {
 
 
 .header {
-    @include burger-menu();
     @include popup();
     margin-top: 3vh;
     margin-bottom: 15vh;
@@ -987,10 +899,10 @@ body {
                 padding-left: 6vw;
             }
 
-            @media (max-width: $screeen-xs-max) {
+            @media (max-width: $screen-xs-max) {
                 width: 70vw;
                 padding-left: 18vw;
-                
+
             }
         }
 
@@ -1021,6 +933,117 @@ body {
 
         .nav {
             display: none;
+        }
+
+
+        .menu,
+        #sidebar-wrapper,
+        .menu-toggle,
+        .fa-bars {
+            display: block;
+        }
+
+
+        #sidebar-wrapper {
+            position: fixed;
+            z-index: 2;
+            right: 0;
+            width: 20vw;
+            height: 60vh;
+            transition: all 0.4s ease 0s;
+            transform: translateX(250px);
+            background: rgba(255, 255, 255, 0.8);
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar-nav {
+            position: absolute;
+            top: 0;
+            width: 40vw;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+
+
+
+        }
+
+
+
+        .sidebar-nav li.sidebar-nav-item a {
+            display: block;
+            text-decoration: none;
+            color: $color-btn-popup;
+            padding: 15px;
+            font-weight: 500;
+            font-size: 20px;
+            text-align: center;
+
+        }
+
+        .sidebar-nav li a:hover {
+            text-decoration: none;
+            transform: scale(1.1);
+            transition: all 0.5 ease;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .sidebar-nav li a:active,
+        .sidebar-nav li a:focus {
+            text-decoration: none;
+        }
+
+        .sidebar-nav>.sidebar-brand {
+            font-size: 1.2rem;
+            background: rgba(52, 58, 64, 0.1);
+            height: 60px;
+            line-height: 50px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 15px;
+        }
+
+        .sidebar-nav>.sidebar-brand a {
+            color: #fff;
+        }
+
+        .sidebar-nav>.sidebar-brand a:hover {
+            color: #fff;
+            background: none;
+        }
+
+        #sidebar-wrapper.active {
+            right: 310px;
+            width: 50vw;
+            transition: all 0.4s ease 0s;
+        }
+
+        .menu-toggle {
+            position: fixed;
+            right: 14vh;
+            top: 3vh;
+            text-align: center;
+            text-decoration: none;
+            background: transparent;
+            line-height: 50px;
+            z-index: 60;
+
+            .fa-bars {
+                color: #a9a9a9;
+                z-index: 60;
+            }
+
+            .fa {
+                margin-right: 3vw;
+                margin-top: 6vh;
+            }
+        }
+
+        .menu-toggle:focus,
+        .menu-toggle:hover {
+            text-decoration: none;
+            opacity: 0.6;
         }
 
     }
@@ -1415,10 +1438,11 @@ body {
 // ===  footer  === //
 
 .footer {
-    padding-top: 6vh;
+    padding-top: 2vh;
     background-color: #000;
     color: rgba(254, 254, 254, 0.6);
     font-size: 14px;
+    margin-bottom: -6vh;
 
     .logo {
         margin-left: 2vw;
