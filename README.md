@@ -2,7 +2,7 @@
 
 
 Test website. 
-   Adaptive recipe site landing page.  
+   Adaptive recipe site landing.  
    > Сreating a site by template from the Internet,  
    > adding a version for a tablet and mobile,  
    > as well as menu, search, modal window.
