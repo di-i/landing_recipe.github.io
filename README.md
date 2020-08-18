@@ -11,7 +11,7 @@ Test website.
 
 1. Learn how to work with frameworks and libraries:
    - Bootstrap 4.5
-   - Jquery
+   - jQuery
    - Animate CSS
    - Wow JS
    
@@ -50,18 +50,13 @@ Test website.
 ![Screen Shot 2020-08-18 at 2 38 11 PM](https://user-images.githubusercontent.com/55539864/90510299-645c3d80-e163-11ea-8d18-32413c22201e.png)
 
    >**Modal window**  
-![login](https://user-images.githubusercontent.com/55539864/90507829-38d75400-e15f-11ea-82ab-5a48a0879a44.gif)  
+![Screen Shot 2020-08-18 at 10 46 57 PM](https://user-images.githubusercontent.com/55539864/90558450-c9845300-e1a4-11ea-8cea-49fc93f9ff9b.png)
+
+
+   >**Search form**
+![Screen Shot 2020-08-18 at 10 46 40 PM](https://user-images.githubusercontent.com/55539864/90558454-cb4e1680-e1a4-11ea-8651-2c39dcac8bee.png)
 
 
 
+ 
 
-### **Tablet**: 
- >**Burger menu**  
-![menu_burger](https://user-images.githubusercontent.com/55539864/90510745-2a3f6b80-e164-11ea-8ed9-4147fe33a846.gif)  
-
-  >**Search form**  
-![search_form](https://user-images.githubusercontent.com/55539864/90510748-2ad80200-e164-11ea-8006-553e8a573f9c.gif)  
-
-
-### **Mobile**: 
-![mob](https://user-images.githubusercontent.com/55539864/90513728-c3708100-e168-11ea-880f-4f1015912d4d.gif)
