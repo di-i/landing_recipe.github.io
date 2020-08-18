@@ -32,7 +32,7 @@ Test website.
 - SASS
 - JS
 - Prepros
-- Fontawesome
+- Font Awesome
 - Methodology BEM
 - Git
 
